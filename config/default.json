@@ -1,0 +1,13 @@
+{
+  "con": {
+    "host": "host",
+    "user": "user",
+    "password": "pwd",
+    "database": "db"
+  },
+  "jwtSecret": "YourSecretToken",
+  "smtp": {
+    "nodemailer": "your config for smtp"
+    }
+  }
+}
