@@ -10,5 +10,7 @@ Technologies used:
     React
     Node.js
     Express
+    Socket.io
+    Redux
     Material.UI
     MySQL
