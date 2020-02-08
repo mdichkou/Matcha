@@ -1,9 +1,11 @@
 Matcha
 ===========
 
-Un site de rencontres permettant à deux potentielles âmes soeurs de se rencontrer.
+This project is about creating a dating website
+users be able to register, connect, look into the profile of other
+users, like them, chat with those that “liked” back.
 
-Technologies utilisées:
+Technologies used:
 ------------------
     React
     Node.js
