@@ -2,12 +2,20 @@ const express = require("express");
 const cors = require("cors");
 const socketIo = require("socket.io");
 const path = require("path");
+const expressGraphQL = require('express-graphql').graphqlHTTP;
+const schema = require('./schema/schema')
 
 const app = express();
 
 // Cors
 app.use(cors());
 
+// GraphQL
+app.use('/graphql', expressGraphQL({
+  schema,
+  graphiql: true,
+}))
+/* 
 // Init Middleware
 app.use(express.json({ extended: false, limit: "50mb" }));
 
@@ -30,11 +38,13 @@ app.use(express.static("client/build"));
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-});
+}); */
 
 const PORT = process.env.PORT || 5000;
 
-const server = app.listen(PORT);
+const server = app.listen(PORT, () => {
+  console.log(`Listening on port: ${PORT}`);
+});
 
 // Init Socket
 const io = socketIo(server);
